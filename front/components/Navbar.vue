@@ -5,19 +5,29 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/">Price is now</a>
+            <NuxtLink class="nav-link" to="/">
+              Price is now
+            </NuxtLink>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about">Weekly price chart</a>
+            <NuxtLink class="nav-link" to="/week">
+              Weekly price chart
+            </NuxtLink>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Monthly price chart</a>
+            <NuxtLink class="nav-link" to="/month">
+              Monthly price chart
+            </NuxtLink>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Price chart for the year</a>
+            <NuxtLink class="nav-link" to="/year">
+              Price chart for the year
+            </NuxtLink>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Choose your range</a>
+            <NuxtLink class="nav-link" to="/choose">
+              Choose your range
+            </NuxtLink>
           </li>
         </ul>
       </div>
