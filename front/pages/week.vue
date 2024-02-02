@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>неделя назад</h1>
-bitoc{{ priceUniqDay }}
+ {{ priceUniqDay }} <br><br>
+ {{ dateU }} <br><br>
+ {{ price }}
   </div>
 </template>
 
@@ -24,7 +26,6 @@ export default {
       return [new Date(data[0]).toLocaleDateString(), data[1]]
     });
 
-
     function uniqueFirstValue(arr){
     let uniqueFirstValues = [];
     let uniqueFirstKeys = [];
@@ -39,31 +40,16 @@ export default {
 
       const priceUniqDay = uniqueFirstValue(date);
 
-    //   const date = prices.map(function (data) {
-    //   return new Date(data[0]).toLocaleDateString();
-    // });
-    //   const price = prices.map(date => date[1]);
+      const dateU = priceUniqDay.map(function (data) {
+      return data[0];
+    });
+      const price = priceUniqDay.map(date => date[1].toFixed(1));
 
-      return { priceUniqDay };
+      return { priceUniqDay, dateU, price};
     } catch (error) {
       console.error('Ошибка при получении данных о цене биткойна:', error);
     }
   },
-
-  methods: {
-     uniqueFirstValue(arr){
-    let uniqueFirstValues = [];
-    let uniqueFirstKeys = [];
-    for (let i = 0; i < arr.length; i++) {
-      if (!uniqueFirstKeys.includes(arr[i][0])) {
-        uniqueFirstKeys.push(arr[i][0]);
-        uniqueFirstValues.push(arr[i]);
-      }
-    }
-    return uniqueFirstValues;
-  }
-},
-
 
 }
 </script>
