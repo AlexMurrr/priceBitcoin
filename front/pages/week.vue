@@ -17,7 +17,7 @@ export default {
     }
   },
 
-  async asyncData({ $axios }) {
+  async asyncData({ $axios, store }) {
     try {
       const response = await $axios.get('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7');
       const prices = response.data.prices;
@@ -49,7 +49,7 @@ export default {
     } catch (error) {
       console.error('Ошибка при получении данных о цене биткойна:', error);
     }
-  },
+  }
 
 }
 </script>
