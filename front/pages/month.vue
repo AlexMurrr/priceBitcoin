@@ -1,30 +1,29 @@
 <template>
   <div>
     <h1>месяц назад</h1>
-<p>{{ naam.prices }}</p>
+<p>{{ pricesMonth }}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: 'monthPage',
-
   data(){
     return {
-
+      priceForMonth: [],
     }
   },
 
   async fetch (){
-    await this.$store.dispatch('getPriceAc');
+    await this.$store.dispatch('getPriceMonth');
   },
 
   methods: {
 
   },
   computed: {
-    naam (){
-      return this.$store.getters.getPrice;
+    pricesMonth (){
+      return this.$store.getters.getPriceMonth.prices;
     }
   }
 }

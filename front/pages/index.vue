@@ -4,6 +4,7 @@
    <p>bitoc  {{ bitcoinPrice }}$</p>
     <!-- <p> cap {{ marketCapBitcoin }}$</p> -->
    <p>etherium {{ ethereumPrice }}$</p>
+   <p>tron {{ tronPrice }}</p>$
    <p>nano {{ nanoPrice }}$</p>
   </div>
 </template>
@@ -19,6 +20,8 @@ export default {
       const nano = await response1.json();
       const responseEth = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd');
       const eth = await responseEth.json();
+      const resTron = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=tron&vs_currencies=usd');
+      const tron = await resTron.json();
 
       // const resBicoinCap = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin');
       // const bitcoinCap = await resBicoinCap.json();
@@ -28,9 +31,10 @@ export default {
       const bitcoinPrice = data.bitcoin.usd;
       const ethereumPrice = eth.ethereum.usd;
       const nanoPrice = nano.nano.usd;
+      const tronPrice = tron.tron.usd;
 
       return {
-        bitcoinPrice, nanoPrice, ethereumPrice
+        bitcoinPrice, nanoPrice, ethereumPrice, tronPrice
       };
     } catch (error) {
       console.error(error);
