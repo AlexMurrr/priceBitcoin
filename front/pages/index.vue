@@ -4,7 +4,7 @@
    <p>bitoc  {{ bitcoinPrice }}$</p>
     <!-- <p> cap {{ marketCapBitcoin }}$</p> -->
    <p>etherium {{ ethereumPrice }}$</p>
-   <p>tron {{ tronPrice }}</p>$
+   <p>tron {{ tronPrice }}$</p>
    <p>nano {{ nanoPrice }}$</p>
   </div>
 </template>
